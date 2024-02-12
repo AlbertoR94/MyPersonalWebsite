@@ -2,6 +2,8 @@ import os
 import streamlit as st
 from PIL import Image
 
+print(st.__version__)
+
 # --- path settings ---
 main_directory = os.getcwd()
 main_file = os.path.join(main_directory, "website.py") # path to application file
@@ -30,10 +32,11 @@ SOCIAL_MEDIA = {
 }
 
 PROJECTS = {
-    "Sales Dashboard - Comparing sales across three stores": "https://youtu.be/Sb0A9i6d320",
-    "Income and Expense Tracker - Web app with NoSQL database": "https://youtu.be/3egaMfE9388",
-    "Desktop Application - Excel2CSV converter with user settings & menubar": "https://youtu.be/LzCfNanQ_9c",
-    "MyToolBelt - Custom MS Excel add-in to combine Python & Excel": "https://pythonandvba.com/mytoolbelt/",
+    "Document Explorer - Simple Application using a LLM": "pages/Document_Explorer.py",
+    "Fake News Detector - App to detect fake news using a PyTorch Classifier": "pages/Fake_news.py",
+    "Football Visualization - European Football analysis using PySpark and SQL": "pages/Football.py",
+    "Sentiment Prediction - Predict sentiment of tweets using Neural Networks": "pages/Sentiment_Prediction.py",
+    #"Crime in Mexico City- Map visualization of crime in Mexico City": " "
 }
 
 PUBLICATIONS = [
@@ -79,10 +82,10 @@ st.write('\n')
 st.subheader("Experience & Qulifications")
 st.write(
     """
-- 🔨 7 Years expereince extracting actionable insights from data
-- 🔨 Strong hands on experience and knowledge in Python and Excel
-- 🔨 Good understanding of statistical principles and their respective applications
-- 🔨 Excellent team-player and displaying strong sense of initiative on tasks
+- 🔨 3 Years experience working with and extracting insights from data.
+- 🔨 Strong hands on experience and knowledge in Python and DS libraries.
+- 🔨 Good analytical and problem-solving skills.
+- 🔨 Excellent team-player.
 """
 )
 
@@ -92,19 +95,23 @@ st.write('\n')
 st.subheader("Skills")
 st.write(
     """
-- 💻 Programming: Python (Scikit-learn, Pandas), SQL, VBA
-- 📈 Data Visulization: PowerBi, MS Excel, Plotly
-- 📚 Modeling: Logistic regression, linear regression, decition trees
-- 🗄️ Databases: Postgres, MongoDB, MySQL
+- 💻 Programming: Python, SQL, C++, C
+- 📈 Data Visualization: Tableau, Plotly, Matplotlib, Seaborn, Vega-Altair
+- 📚 Modeling and DS libraries: Numpy, Scikit-learn, Pandas, PySpark, PyTorch
+- 🗄️ Databases: Postgres, MySQL
+- ⌨️ Others: Visual Studio Code, Git, Excel
 """
 )
 
 # --- Projects & Accomplishments ---
 st.write('\n')
-st.subheader("Projects & Accomplishments")
+st.subheader("Projects")
+st.caption("Use the navigation panel to explore each project.")
 st.write("---")
 for project, link in PROJECTS.items():
-    st.write(f"[{project}]({link})")
+    #st.write(f"[{project}]({link})")
+    st.write(project)
+    #st.link_button(url=link, label=project)
 
 
 # --- Publications ---
